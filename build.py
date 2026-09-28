@@ -28,8 +28,7 @@ ROOT = pathlib.Path(__file__).parent
 import sys, shutil
 VARIANT = sys.argv[1] if len(sys.argv) > 1 else "firm"
 SHREYA = VARIANT == "shreya"
-OUT = ROOT / "shreya-site" if SHREYA else ROOT
-if SHREYA: SITE += "/shreya-site"
+OUT = ROOT / "docs" if SHREYA else ROOT   # docs/ is what GitHub Pages publishes
 ABOUT = "/about/" if SHREYA else "/ca-shreya-jain/"
 BRAND = "CA SHREYA JAIN" if SHREYA else "PRAKASH S. JAIN &amp; CO."
 BRAND_SUB = "CA · CS · LL.B. · FAFD" if SHREYA else "CHARTERED ACCOUNTANTS"
