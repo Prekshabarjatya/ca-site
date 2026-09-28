@@ -438,3 +438,18 @@ form.enq .ok{font-size:16.5px}
   .hero h1{font-size:clamp(34px,9vw,44px)}
   .facts dd{font-size:17px}
 }
+
+/* narrow phones: keep the brand and the menu button on one line */
+.brand{min-width:0}
+.burger{flex:none}
+@media (max-width:560px){
+  .hdr .wrap{height:72px;gap:14px}
+  .brand .name{font-size:13.5px!important;letter-spacing:.08em!important}
+  .brand{gap:10px}
+  .brand .disc{width:40px;height:40px}
+  .brand .disc svg{width:26px;height:26px}
+  .brand .name{font-size:14.5px;letter-spacing:.1em;white-space:normal;line-height:1.15}
+  .brand .name small{font-size:10px;letter-spacing:.12em;margin-top:5px}
+  main{padding-top:72px}
+  body.inner main{padding-top:64px}
+}

@@ -11,18 +11,18 @@
 - Top skills: Income Tax, Appeals, Company Secretarial Work, Corporate Tax, Foreign Tax
 
 ## Pages
-- [Home](https://www.example.in/): overview
-- [About](https://www.example.in/about/): profile, qualifications and experience
-- [Practice areas](https://www.example.in/services/): all practice areas
-- [Income Tax Compliance](https://www.example.in/services/income-tax/): Corporate and personal tax returns, advance tax, TDS and tax audit for individuals, firms and companies.
-- [Assessments & Appeals](https://www.example.in/services/assessments-appeals/): Replies to notices, scrutiny and faceless assessments, and appeals before CIT(A) and the Income Tax Appellate Tribunal.
-- [Tax Planning & Foreign Tax](https://www.example.in/services/tax-planning-foreign-tax/): Tax planning for domestic and foreign clients, DTAA relief, residential status and certification of foreign remittances.
-- [Company Incorporation & Secretarial](https://www.example.in/services/company-incorporation-secretarial/): Company and LLP incorporation, ROC annual filings, board and shareholder compliance and changes in directors or capital.
-- [RBI & FEMA Compliance](https://www.example.in/services/rbi-fema-compliance/): Foreign investment reporting, overseas investment, ECB and the RBI filings that follow when money crosses borders.
-- [Forensic Audit](https://www.example.in/services/forensic-audit/): Investigation of suspected fraud, diversion of funds and accounting irregularities, with reports that can stand in a dispute.
-- [Audit & Assurance](https://www.example.in/services/audit-assurance/): Statutory audit of companies, tax audit, and audits of trusts, societies and firms.
-- [GST](https://www.example.in/services/gst/): Registration, returns, input tax credit reconciliation, annual returns and replies to department notices.
-- [Contact](https://www.example.in/contact/): office address, phone and enquiry form
+- [Home](https://prekshabarjatya.github.io/ca-site/shreya-site/): overview
+- [About](https://prekshabarjatya.github.io/ca-site/shreya-site/about/): profile, qualifications and experience
+- [Practice areas](https://prekshabarjatya.github.io/ca-site/shreya-site/services/): all practice areas
+- [Income Tax Compliance](https://prekshabarjatya.github.io/ca-site/shreya-site/services/income-tax/): Corporate and personal tax returns, advance tax, TDS and tax audit for individuals, firms and companies.
+- [Assessments & Appeals](https://prekshabarjatya.github.io/ca-site/shreya-site/services/assessments-appeals/): Replies to notices, scrutiny and faceless assessments, and appeals before CIT(A) and the Income Tax Appellate Tribunal.
+- [Tax Planning & Foreign Tax](https://prekshabarjatya.github.io/ca-site/shreya-site/services/tax-planning-foreign-tax/): Tax planning for domestic and foreign clients, DTAA relief, residential status and certification of foreign remittances.
+- [Company Incorporation & Secretarial](https://prekshabarjatya.github.io/ca-site/shreya-site/services/company-incorporation-secretarial/): Company and LLP incorporation, ROC annual filings, board and shareholder compliance and changes in directors or capital.
+- [RBI & FEMA Compliance](https://prekshabarjatya.github.io/ca-site/shreya-site/services/rbi-fema-compliance/): Foreign investment reporting, overseas investment, ECB and the RBI filings that follow when money crosses borders.
+- [Forensic Audit](https://prekshabarjatya.github.io/ca-site/shreya-site/services/forensic-audit/): Investigation of suspected fraud, diversion of funds and accounting irregularities, with reports that can stand in a dispute.
+- [Audit & Assurance](https://prekshabarjatya.github.io/ca-site/shreya-site/services/audit-assurance/): Statutory audit of companies, tax audit, and audits of trusts, societies and firms.
+- [GST](https://prekshabarjatya.github.io/ca-site/shreya-site/services/gst/): Registration, returns, input tax credit reconciliation, annual returns and replies to department notices.
+- [Contact](https://prekshabarjatya.github.io/ca-site/shreya-site/contact/): office address, phone and enquiry form
 
 ## Frequently asked questions
 - Q: Who is CA Shreya Jain?

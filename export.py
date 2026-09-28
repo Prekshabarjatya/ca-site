@@ -10,6 +10,17 @@ import re, pathlib
 ROOT = pathlib.Path(__file__).parent
 EXPORT = ROOT / "downloads"
 
+def absolute_links(html, page_rel):
+    # undo build.py's relative links so every page shares one link space
+    import posixpath
+    def fix(m):
+        attr, url = m.group(1), m.group(2)
+        if re.match(r"(https?:|mailto:|tel:|#|data:|/)", url): return m.group(0)
+        path = posixpath.normpath(posixpath.join(page_rel, url))
+        if url.endswith("/") or url in (".", "./", "..", "../"): path = path.rstrip("/") + "/"
+        return f'{attr}="{path}"'
+    return re.sub(r'(href|src)="([^"]*)"', fix, html)
+
 def key(path):
     p = path.strip("/")
     return p.replace("/", "-") if p else "home"
@@ -18,12 +29,12 @@ def pack(site_dir, out_name):
     site = pathlib.Path(site_dir)
     skip = {"shreya-site", "downloads", "src"} if site == ROOT else set()
     pages = sorted(p for p in site.rglob("index.html") if not skip & set(p.relative_to(site).parts))
-    shell = (site / "index.html").read_text()
+    shell = absolute_links((site / "index.html").read_text(), "/")
     sections, titles = [], {}
     for p in pages:
         rel = "/" + str(p.parent.relative_to(site)).replace(".", "") + "/"
         rel = "/" if rel == "//" else rel
-        s = p.read_text()
+        s = absolute_links(p.read_text(), rel)
         k = key(rel)
         titles[k] = __import__("html").unescape(re.search(r"<title>(.*?)</title>", s).group(1))
         inner = "inner" if 'class="inner"' in s else "home"

@@ -8,7 +8,7 @@ read it without running JavaScript.  Run:  python3 build.py
 import html, json, os, pathlib, datetime
 
 # ------------------------------------------------------------------ settings
-SITE = "https://www.example.in"          # TODO: set the real domain before going live
+SITE = "https://prekshabarjatya.github.io/ca-site"   # live on GitHub Pages; change when a custom domain is set up
 FIRM = "Prakash S. Jain & Co."
 FIRM_LONG = "Prakash S. Jain & Co., Chartered Accountants"
 PARTNER = "CA Shreya Jain"
@@ -29,6 +29,7 @@ import sys, shutil
 VARIANT = sys.argv[1] if len(sys.argv) > 1 else "firm"
 SHREYA = VARIANT == "shreya"
 OUT = ROOT / "shreya-site" if SHREYA else ROOT
+if SHREYA: SITE += "/shreya-site"
 ABOUT = "/about/" if SHREYA else "/ca-shreya-jain/"
 BRAND = "CA SHREYA JAIN" if SHREYA else "PRAKASH S. JAIN &amp; CO."
 BRAND_SUB = "CA · CS · LL.B. · FAFD" if SHREYA else "CHARTERED ACCOUNTANTS"
@@ -587,7 +588,15 @@ def sitemap(paths):
 LOGO_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#2f3f73"/><g transform="translate(9 19) scale(.46)" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 46 L28 22 L42 36 L66 10 L94 40"/><path d="M52 46 L66 32 L80 46"/><path d="M58 40 H74"/></g></svg>\n'
 
 # ------------------------------------------------------------------ write
+def relative_links(rel, text):
+    # root-relative links ("/services/") -> relative ("../services/") so the
+    # site works at any address: a domain root, a GitHub Pages sub-folder, or on disk
+    import re
+    up = "../" * rel.count("/") or "./"
+    return re.sub(r'(href|src)="/(?!/)([^"]*)"', lambda m: f'{m.group(1)}="{up}{m.group(2)}"', text)
+
 def write(rel, text):
+    if rel.endswith(".html"): text = relative_links(rel, text)
     p = OUT / rel; p.parent.mkdir(parents=True, exist_ok=True); p.write_text(text)
 
 if SHREYA:

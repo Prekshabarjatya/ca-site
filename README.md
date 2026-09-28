@@ -25,10 +25,18 @@ Edit content in `build.py` (services, FAQs, contact details) and `shreya.py` (pe
 
 Every page is static HTML with its own title, description, canonical URL, Open Graph tags and schema.org JSON-LD (AccountingService, Person, Service, FAQPage, BreadcrumbList). Each version ships `sitemap.xml`, a `robots.txt` that admits search and AI crawlers, and `llms.txt`.
 
+## Live site
+
+GitHub Pages serves the repo root from `main`:
+
+- Firm version: https://prekshabarjatya.github.io/ca-site/
+- CA Shreya Jain version: https://prekshabarjatya.github.io/ca-site/shreya-site/
+
+Links inside the pages are relative, so the site works in this sub-folder, at a custom domain, or opened from disk.
+
 ## Before going live
 
-- Set `SITE` in `build.py` to the real domain (currently `https://www.example.in`) and rebuild.
+- When a custom domain is ready, set `SITE` in `build.py` to it (currently the GitHub Pages address) and rebuild. `robots.txt` and `sitemap.xml` only take effect at a domain root, so this matters for SEO.
 - Confirm the phone number and add an email address.
 - Add CA Shreya Jain's photo, ICAI membership and firm registration numbers.
 - Connect the contact form to an inbox (e.g. Formspree or a hosting provider's form handler).
-- Host each version at its domain root; pages use root-relative links (`/services/…`).
