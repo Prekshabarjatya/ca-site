@@ -28,7 +28,10 @@ ROOT = pathlib.Path(__file__).parent
 import sys, shutil
 VARIANT = sys.argv[1] if len(sys.argv) > 1 else "firm"
 SHREYA = VARIANT == "shreya"
-OUT = ROOT / "docs" if SHREYA else ROOT   # docs/ is what GitHub Pages publishes
+# GitHub Pages publishes the repo root, so CA Shreya Jain's site goes there;
+# the firm version lives in firm/ and is kept out of search results (noindex).
+OUT = ROOT if SHREYA else ROOT / "firm"
+if not SHREYA: SITE += "/firm"
 ABOUT = "/about/" if SHREYA else "/ca-shreya-jain/"
 BRAND = "CA SHREYA JAIN" if SHREYA else "PRAKASH S. JAIN &amp; CO."
 BRAND_SUB = "CA · CS · LL.B. · FAFD" if SHREYA else "CHARTERED ACCOUNTANTS"
@@ -190,7 +193,7 @@ def head(title, desc, path, graph, og_type="website"):
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{url}">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="robots" content="{"index, follow, max-image-preview:large, max-snippet:-1" if SHREYA else "noindex, follow"}">
 <meta name="author" content="{esc(FIRM_LONG)}">
 <meta name="geo.region" content="IN-MP">
 <meta name="geo.placename" content="Indore">
@@ -602,6 +605,7 @@ if SHREYA:
     import shreya
     shreya.patch(globals())
     home, about, services, contact, llms_txt = shreya.home, shreya.about, shreya.services, shreya.contact, shreya.llms_txt
+if OUT != ROOT:
     (OUT / "assets").mkdir(parents=True, exist_ok=True)
     for f in ("site.css", "site.js"): shutil.copy(ROOT / "assets" / f, OUT / "assets" / f)
 write("index.html", home())

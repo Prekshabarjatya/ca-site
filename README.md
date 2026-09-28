@@ -6,16 +6,16 @@ Two versions share one design:
 
 | Version | Folder | Voice |
 |---|---|---|
-| Prakash S. Jain & Co. (firm) | repo root (`index.html`, `services/`, …) | the firm |
-| CA Shreya Jain (personal), **published** | `docs/` | first person |
+| CA Shreya Jain (personal), **published** | repo root (`index.html`, `about/`, `services/`, …) | first person |
+| Prakash S. Jain & Co. (firm) | `firm/` (noindex) | the firm |
 
 `downloads/` holds each version as a single HTML file that opens offline with a double-click.
 
 ## Build
 
 ```bash
-python3 build.py          # firm version → repo root
-python3 build.py shreya   # personal version → docs/ (published)
+python3 build.py shreya   # CA Shreya Jain's site → repo root (published)
+python3 build.py          # firm version → firm/
 python3 export.py         # single-file versions → downloads/
 ```
 
@@ -27,11 +27,11 @@ Every page is static HTML with its own title, description, canonical URL, Open G
 
 ## Live site
 
-GitHub Pages publishes the `docs/` folder on `main`, which is CA Shreya Jain's site:
+GitHub Pages publishes the repo root on `main`, which is CA Shreya Jain's site:
 
 **https://prekshabarjatya.github.io/ca-site/**
 
-The firm version at the repo root is kept for reference and is not published.
+The firm version is also reachable at https://prekshabarjatya.github.io/ca-site/firm/ but is marked `noindex`, so search engines only list CA Shreya Jain's site.
 
 Links inside the pages are relative, so the site works in this sub-folder, at a custom domain, or opened from disk.
 

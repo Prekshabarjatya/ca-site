@@ -27,7 +27,7 @@ def key(path):
 
 def pack(site_dir, out_name):
     site = pathlib.Path(site_dir)
-    skip = {"docs", "downloads", "src"} if site == ROOT else set()
+    skip = {"firm", "docs", "downloads", "src"} if site == ROOT else set()
     pages = sorted(p for p in site.rglob("index.html") if not skip & set(p.relative_to(site).parts))
     shell = absolute_links((site / "index.html").read_text(), "/")
     sections, titles = [], {}
@@ -75,5 +75,5 @@ def pack(site_dir, out_name):
     (EXPORT / out_name).write_text(out)
     print(out_name, len(pages), "pages,", round(len(out) / 1024), "KB")
 
-pack(ROOT, "prakash-s-jain-co-website.html")
-pack(ROOT / "docs", "ca-shreya-jain-website.html")
+pack(ROOT / "firm", "prakash-s-jain-co-website.html")
+pack(ROOT, "ca-shreya-jain-website.html")
